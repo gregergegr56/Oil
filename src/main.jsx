@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { AdaptivityProvider, ConfigProvider } from '@vkontakte/vkui'
-import { AppearanceProvider, useAppearance } from '@vkontakte/vk-bridge-react'
+import { useAppearance } from '@vkontakte/vk-bridge-react'
 import '@vkontakte/vkui/dist/vkui.css'
 import App from './App'
 import vkBridge from '@vkontakte/vk-bridge'
