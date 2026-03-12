@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import vkBridge from '@vkontakte/vk-bridge'
 import {
   Panel,
   PanelHeader,
@@ -46,6 +47,17 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState(null)
   const [activeTab, setActiveTab] = useState('oil')
   const [view, setView] = useState('main')
+  const [userName, setUserName] = useState('')
+
+  useEffect(() => {
+    vkBridge.send('VKWebAppGetUserInfo')
+      .then(data => {
+        if (data && data.first_name) {
+          setUserName(`${data.first_name} ${data.last_name || ''}`)
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   const fetchPrices = async () => {
     try {
@@ -224,7 +236,7 @@ function App() {
             </PanelHeaderButton>
           }
         >
-          💰 Цены на сырьё
+          💰 {userName || 'Цены на сырьё'}
         </PanelHeader>
 
         <Group>
