@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { AdaptivityProvider, ConfigProvider, useAdaptivityWithJSMediaQueries } from '@vkontakte/vkui'
+import { AdaptivityProvider, ConfigProvider } from '@vkontakte/vkui'
+import { AppearanceProvider, useAppearance } from '@vkontakte/vk-bridge-react'
 import '@vkontakte/vkui/dist/vkui.css'
 import App from './App'
 import vkBridge from '@vkontakte/vk-bridge'
@@ -8,8 +9,10 @@ import vkBridge from '@vkontakte/vk-bridge'
 vkBridge.send('VKWebAppInit')
 
 const Root = () => {
+  const appearance = useAppearance()
+  
   return (
-    <ConfigProvider>
+    <ConfigProvider appearance={appearance} isWebView={vkBridge.isWebView()}>
       <AdaptivityProvider>
         <App />
       </AdaptivityProvider>
