@@ -105,6 +105,16 @@ function App() {
     <SimpleCell
       key={item.code}
       multiline
+      subtitle={
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginTop: '4px' }}>
+          <Caption style={{ color: '#999' }}>
+            🕐 {item.updated_at ? new Date(item.updated_at).toLocaleString('ru-RU') : '—'}
+          </Caption>
+          <Caption style={{ color: '#999' }}>
+            за 24ч
+          </Caption>
+        </div>
+      }
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <div>
@@ -187,15 +197,6 @@ function App() {
             </Div>
           </Group>
         )}
-
-        <Group>
-          <Div style={{ textAlign: 'center' }}>
-            <Footnote style={{ color: '#999' }}>
-              Данные предоставлены в демо-режиме<br />
-              {lastUpdate && `Последнее обновление: ${lastUpdate.toLocaleTimeString('ru-RU')}`}
-            </Footnote>
-          </Div>
-        </Group>
 
         <Group>
           <Div style={{ display: 'flex', justifyContent: 'center' }}>
