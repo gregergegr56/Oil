@@ -196,6 +196,19 @@ function App() {
             </Footnote>
           </Div>
         </Group>
+
+        <Group>
+          <Div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button
+              size="l"
+              stretched
+              onClick={handleRefresh}
+              disabled={loading}
+            >
+              {loading ? 'Обновление...' : '🔄 Обновить данные'}
+            </Button>
+          </Div>
+        </Group>
       </Panel>
     )
   }
