@@ -1,6 +1,6 @@
-# 🛢️ Oil Price Tracker
+# 🛢️ Oil Tracker
 
-**Oil Price Tracker** — это мини-приложение VK для мониторинга цен на сырьевые товары в реальном времени. Приложение предоставляет актуальную информацию о ценах на нефть, энергоносители, металлы и валютные пары.
+**Oil Tracker** — это мини-приложение VK для мониторинга цен на сырьевые товары в реальном времени. Приложение предоставляет актуальную информацию о ценах на нефть, энергоносители, металлы и валютные пары.
 
 ![VK Mini Apps](https://img.shields.io/badge/platform-VK%20Mini%20Apps-0077FF?style=flat-square&logo=vk)
 ![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react)
